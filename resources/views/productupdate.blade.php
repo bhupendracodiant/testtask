@@ -2,6 +2,38 @@
 
 @section('content')
 <!--== BODY INNER CONTAINER ==-->
+<style>
+    input[type="file"] {
+        display: block;
+    }
+
+    .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+        width: 117px;
+    }
+
+    .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+    }
+
+    .remove {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .remove:hover {
+        background: white;
+        color: black;
+    }
+</style>
 <div class="sb2-2">
     <!--== breadcrumbs ==-->
     <div class="sb2-2-2">
@@ -33,16 +65,16 @@
 
                                             </div>
                                             <div class="input-field col s6">
-                                            <span>Product SKU</span>
+                                                <span>Product SKU</span>
                                                 <input id="last_name" type="text" class="validate" name="psku" value="{{$products->sku}}">
-                                               
+
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                            <span>Price</span>
+                                                <span>Price</span>
                                                 <input id="list_phone" type="text" class="validate" name="pprice" value="{{$products->price}}">
-                                              
+
                                             </div>
                                         </div>
 
@@ -54,19 +86,26 @@
 
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12"> <input type="submit" value="Update product" class="waves-button-input"></div>
-                                        </div>
-                                    </form>
+                                
+                                <div class="row">
+                                    <div class="field" align="left">
+                                        <h4>Upload multiple images</h4>
+                                        <input type="file" id="files" name="files[]" multiple />
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="input-field col s12"> <input type="submit" value="Update product" class="waves-button-input"></div>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

@@ -1,6 +1,38 @@
 @extends('master')
 
 @section('content')
+<style>
+    input[type="file"] {
+        display: block;
+    }
+
+    .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+        width: 117px;
+    }
+
+    .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+    }
+
+    .remove {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .remove:hover {
+        background: white;
+        color: black;
+    }
+</style>
 <!--== BODY INNER CONTAINER ==-->
 <div class="sb2-2">
     <!--== breadcrumbs ==-->
@@ -60,9 +92,13 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="input-field col s12">
+                                            <!-- <div class="input-field col s12">
                                                 <span>Product images(you can choose multiple images)</span>
                                                 <input type="file" name="files[]" value="upload images" multiple required>
+                                            </div> -->
+                                            <div class="field" align="left">
+                                                <h4>Upload multiple images</h4>
+                                                <input type="file" id="files" name="files[]" multiple />
                                             </div>
                                         </div>
                                         <div class="row">

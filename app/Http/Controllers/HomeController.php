@@ -88,11 +88,17 @@ class HomeController extends Controller
             } else {
                 $status = '<a href="userstatus?status=1&id=' . Crypt::encrypt($record->id) . '"><span class="label label-danger">Block</span></a>';
             }
+            if(!empty($record->profile_image)){
+                $image= url('upload'). "/" .$record->profile_image;
+            }else
+            {
+                $image=url('admin/images/user.png');
+            }
             $deletealert = "return confirm('Are you sure you want to delete this user ?')";
             $baseurl = url('upload');
             $data_arr[] = array(
                 "id" => $i,
-                "user" => '<img src="' . $baseurl . "/" . $record->profile_image . '" width="80"height="80">',
+                "user" => '<img src="' . $image. '" width="80"height="80">',
                 "name" => $record->name,
                 "phone" => $record->phone,
                 "created_at" => date('m-d-Y', strtotime($record->created_at)),
